@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:45:06 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/17 18:48:32 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/20 16:10:41 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int				put_width(char **tmp, t_info *info)
 	else
 		*tmp = ft_strjoin(*tmp, width);
 	return ((*info).width);
-
 }
+
 int				ft_putstr(char *s)
 {
 	if (!s)

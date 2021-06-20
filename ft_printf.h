@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:25:27 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/17 18:47:32 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/20 17:01:30 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			print_s(char *str, t_info *info);
 
 //print num
 char		*ft_baseset(char type);
-int			print_num(unsigned long long num, t_info *info);
+int			print_num(signed long long num, t_info *info);
 int			p_type(char **tmp);
 int			put_prec(unsigned long long num, t_info *info, char **tmp);
 int			put_minus_with_zero(t_info *info, char **tmp, int len);

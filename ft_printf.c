@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:39:01 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/17 21:39:38 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/20 16:49:47 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int				print_type(va_list ap, t_info *info)
 	else if (type == 's')
 		ret = print_s(va_arg(ap, char *), info);
 	else if (type == 'd' || type == 'i')
-		ret = print_num(va_arg(ap, int), info);// 부호 있는 10진 정수
+		ret = print_num(va_arg(ap, int), info); // 부호 있는 10진 정수
 	else if (type == 'x' || type == 'X' || type == 'u')
 		ret = print_num(va_arg(ap, unsigned int), info);//부호 없는 16진 정수 "x,X", 부호 없는 10진 정수'u'
 	else if (type == 'p')

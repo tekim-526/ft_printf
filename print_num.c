@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:59:00 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/17 21:19:29 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/20 17:03:28 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ int			put_prec(unsigned long long num, t_info *info, char **tmp)
 		return (0);
 	i = 0;
 	(*tmp)[ret] = '\0';
-	while (len + 1 < ret)
+	while (len + i < ret)
 	{
-		*tmp[i] = '0';
+		(*tmp)[i] = '0';
 		i++;
 	}
 	i = 1;
@@ -80,7 +80,7 @@ int			p_type(char **tmp)
 	return (ft_strlen(*tmp));
 }
 
-int			print_num(unsigned long long num, t_info *info)
+int			print_num(signed long long num, t_info *info)
 {
 	char	*tmp;
 	int		len;
@@ -91,7 +91,7 @@ int			print_num(unsigned long long num, t_info *info)
 	if (((*info).type == 'd' || (*info).type == 'i') && num < 0)
 	{
 		(*info).is_negative = 1;
-		num *= -1;
+		num = num * -1;
 	}
 	len = put_prec(num, info, &tmp);
 	len += put_minus(info, &tmp);
