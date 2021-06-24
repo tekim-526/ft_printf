@@ -6,7 +6,7 @@
 /*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 16:32:23 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/17 18:02:53 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/24 15:07:46 by kimts            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void		info_value(t_info *info)
 {
-	(*info).minus = 0;
-	(*info).zero = 0;
-	(*info).width = 0;
-	(*info).prec = -1;
-	(*info).type = 0;
-	(*info).nbr_base = 10;
-	(*info).is_negative = 0;
+	info->minus = 0;
+	info->zero = 0;
+	info->width = 0;
+	info->prec = -1;
+	info->type = 0;
+	info->nbr_base = 10;
+	info->is_negative = 0;
 }
 
 int			ft_numlen(unsigned long long nbr, t_info *info)

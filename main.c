@@ -2,9 +2,8 @@
 
 int main()
 {
-	int d = -123;
-	printf("-->|%-4.d|<--\n", d);
-	ft_printf("ft-->|%-4.d|<--\n", d);
+	//printf("%d\n", printf("%.5d\n", -123));
 
+	printf("%d\n", ft_printf("%.5d\n", -123));
 	return (0);
 }
