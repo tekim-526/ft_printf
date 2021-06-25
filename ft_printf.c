@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 14:39:01 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/24 16:58:58 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/25 16:07:30 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void			width_prec_check(va_list ap, char *format, t_info *info, int i)
 	}
 	else if (format[i] == '*') // ex) %*.*d
 	{
-		if (info->prec == -1) // ex) %*.10d
+		if (info->prec == -1) // ex) %*d
 		{
 			info->width = va_arg(ap, int);
 			if (info->width < 0) //애스터 리스크에 들어오는게 음수일 경우 -플래그에 값을 줌
@@ -88,7 +88,7 @@ int				parsing_format(va_list ap, char *format)
 			ret += ft_putchar(format[i++]); //putchar는 임의로 int형으로 만듬 리턴을 받기 위해
 		if (format[i] == '%') //출력하다가 %(Format Tag)를 만났을 때
 		{
-			info_value(info); //구조체에 임의로 설정한 디폴트값(?)을 넣어줌 ==>>> printf_side.c에 있음
+			info_value(info); //구조체에 임의로 설정한 값을 넣어줌 ==>>> printf_side.c에 있음
 			while (format[++i] && !(ft_strchr(TYPE, format[i]))) //%뒤에 바로 type이 나올 수 도 있지만 width, .precision, flag가 나올 수 있기 때문에 체크를 해주는 부분
 				flag_check(ap, info, format, i);
 			info->type = format[i++]; // 플래그 체크 끝났으므로 i++해줘서 서식지정자(type)을 확인함

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:59:00 by tekim             #+#    #+#             */
-/*   Updated: 2021/06/24 18:06:35 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/25 16:00:11 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int			put_prec(unsigned long long num, t_info *info, char **tmp)
 	(*tmp)[ret] = '\0';
 	while (len + i < ret) // .precision이 있는 경우 '0'으로 채워줌
 	{
-		(*tmp)[i] = '0';// tmp의 주소값을 넘겨주므로 printf_num함수에서 선언된 *tmp의 인덱스로 생각하면 편함
+		(*tmp)[i] = '0'; // char 타입의 인덱스를 i개 가지는 배열을 가리키는 포인터, tmp의 주소값을 넘겨주므로 printf_num함수에서 선언된 *tmp의 인덱스로 생각하면 편함
 		i++;
 	}
-	i = 1; //인덱스 초기화
+	i = 1; //인덱스 초기화 (*tmp)[ret] = '\0'이기 때문에 1로 초기화
 	if (num == 0 && info->prec != 0)//num = 0 인경우
 		(*tmp)[ret - i] = '0';
 	while (num) //뒤에서 부터 넣어줌 itoa처럼
