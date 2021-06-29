@@ -3,21 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kimts <kimts@student.42.fr>                +#+  +:+       +#+         #
+#    By: tekim <tekim@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/17 21:25:03 by tekim             #+#    #+#              #
-#    Updated: 2021/06/17 21:42:49 by kimts            ###   ########.fr        #
+#    Updated: 2021/06/22 14:29:54 by tekim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
+
+LIBFT		= libft
+
+LIBFT_LIB	= libft.a
 
 SOURCES		= ft_printf.c    \
 			  print_c.c      \
 			  print_num.c    \
 			  print_s.c      \
 			  printf_side.c  \
-			  printf_side2.c \
 
 INCLUDES	= ft_printf.h
 
@@ -32,15 +35,19 @@ CFLAGS		= -Wall -Wextra -Werror
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c  $< -o $@
+	$(CC) $(CFLAGS) -c  $< -o $(<:.c=.o) -I$(INCLUDES)
 
 $(NAME): $(OBJECTS)
-		ar rc $@ $^
+		make all -C $(LIBFT)/
+		cp $(LIBFT)/$(LIBFT_LIB) $(NAME)
+		ar crs $(NAME) $(OBJECTS)
 
 clean:
-	rm -f $(OBJECTS)
+	$(RM) $(OBJECTS)
+	make clean -C $(LIBFT)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
+	make clean -C $(LIBFT)
 
 re: fclean all
