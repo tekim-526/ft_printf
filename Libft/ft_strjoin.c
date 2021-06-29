@@ -6,7 +6,7 @@
 /*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:21:43 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/26 16:18:13 by kimts            ###   ########.fr       */
+/*   Updated: 2021/06/29 17:45:58 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ char			*ft_strjoin(char const *s1, char const *s2)
 	ft_memmove(ret, s1, len1);
 	ft_memmove(ret + len1, s2, len2);
 	ret[len1 + len2] = '\0';
-	//free((char *)s1);
 	return (ret);
 }
